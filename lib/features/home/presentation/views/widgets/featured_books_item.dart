@@ -6,8 +6,8 @@ class FeaturedBooksItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.26,
+    return Padding(
+      padding: const EdgeInsets.only(right: 16),
       child: AspectRatio(
         aspectRatio: 1.2 / 2,
         child: Container(
