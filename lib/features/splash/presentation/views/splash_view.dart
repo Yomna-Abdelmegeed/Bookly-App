@@ -1,7 +1,5 @@
-import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -19,9 +17,9 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void goToHome() {
-    Future.delayed(const Duration(seconds: 5), () {
-      Get.off(HomeView());
-    });
+    // Future.delayed(const Duration(seconds: 5), () {
+    //   Get.off(HomeView());
+    // });
   }
 
   @override
