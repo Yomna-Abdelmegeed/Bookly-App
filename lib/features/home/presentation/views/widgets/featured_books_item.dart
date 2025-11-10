@@ -9,7 +9,7 @@ class FeaturedBooksItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: AspectRatio(
-        aspectRatio: 1.2 / 2,
+        aspectRatio: 1.3 / 2,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
