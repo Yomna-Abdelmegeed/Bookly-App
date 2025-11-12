@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
-
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
@@ -14,7 +13,10 @@ class CustomAppBar extends StatelessWidget {
           image: AssetImage(AssetsData.logo),
           height: 20,
         ),
-        Icon(Icons.search),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.search_rounded),
+        )
       ],
     );
   }

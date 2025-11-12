@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeDetailsAppBar extends StatelessWidget {
   const HomeDetailsAppBar({super.key});
@@ -11,7 +12,11 @@ class HomeDetailsAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.xmark)),
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).pop();
+              },
+              icon: Icon(FontAwesomeIcons.xmark)),
           IconButton(
               onPressed: () {}, icon: Icon(FontAwesomeIcons.cartShopping)),
         ],
