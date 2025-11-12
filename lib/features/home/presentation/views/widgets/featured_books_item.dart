@@ -6,19 +6,16 @@ class FeaturedBooksItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 16),
-      child: AspectRatio(
-        aspectRatio: 1.3 / 2,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-                image: AssetImage(
-                  AssetsData.testImage,
-                ),
-                fit: BoxFit.fill),
-          ),
+    return AspectRatio(
+      aspectRatio: 1.3 / 2,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+              image: AssetImage(
+                AssetsData.testImage,
+              ),
+              fit: BoxFit.fill),
         ),
       ),
     );
