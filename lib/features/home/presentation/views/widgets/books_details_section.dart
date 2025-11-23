@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/text_styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_item.dart';
@@ -18,7 +19,7 @@ class BooksDetailsSection extends StatelessWidget {
         SizedBox(height: 24),
         SizedBox(
           height: height * 0.35,
-          child: FeaturedBooksItem(),
+          child: FeaturedBooksItem(imageURL: NetData.errorImage),
         ),
         SizedBox(height: 42),
         SizedBox(

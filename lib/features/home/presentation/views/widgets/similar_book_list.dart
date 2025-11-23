@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_item.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class SimilarBookList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(left: 16),
-            child: FeaturedBooksItem(),
+            child: FeaturedBooksItem(imageURL: NetData.errorImage),
           );
         },
       ),
