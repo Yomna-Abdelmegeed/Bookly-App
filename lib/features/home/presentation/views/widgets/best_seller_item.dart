@@ -1,14 +1,15 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/text_styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
-
+  const BestSellerItem({super.key, required this.book});
+  final Item book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +20,10 @@ class BestSellerItem extends StatelessWidget {
         height: 140,
         child: Row(
           children: [
-            FeaturedBooksItem(imageURL: NetData.errorImage),
+            FeaturedBooksItem(
+              imageURL:
+                  book.volumeInfo?.imageLinks?.thumbnail ?? NetData.errorImage,
+            ),
             SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -29,7 +33,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.53,
                     child: Text(
-                      'Harry Potter and the Goblet of Fire',
+                      book.volumeInfo!.title!,
                       style: StyleOfText.textStyle20,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -37,7 +41,7 @@ class BestSellerItem extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'J.K. Rowling',
+                    book.volumeInfo!.authors![0],
                     style: StyleOfText.textStyle14,
                   ),
                   SizedBox(height: 8),
@@ -45,7 +49,7 @@ class BestSellerItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '19.99 €',
+                        'Free',
                         style: StyleOfText.textStyle20
                             .copyWith(fontWeight: FontWeight.w600),
                       ),
