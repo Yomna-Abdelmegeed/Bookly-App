@@ -1,9 +1,10 @@
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksItem extends StatelessWidget {
-  const FeaturedBooksItem({super.key, required this.imageURL });
-  final String imageURL;
+  const FeaturedBooksItem({super.key, required this.imageURL});
+  final String? imageURL;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -12,7 +13,7 @@ class FeaturedBooksItem extends StatelessWidget {
         aspectRatio: 1.3 / 2,
         child: CachedNetworkImage(
           fit: BoxFit.fill,
-          imageUrl: imageURL,
+          imageUrl: imageURL ?? NetData.errorImage,
           placeholder: (context, url) =>
               Center(child: CircularProgressIndicator()),
           errorWidget: (context, url, error) => Icon(Icons.error),
