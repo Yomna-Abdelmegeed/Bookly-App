@@ -16,7 +16,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       final data = await apiService.get(
         endpoint:
-            'volumes?q=subject:computer science&Sorting=newest&Filtering=free-ebooks',
+            'volumes?q=subject:flutter&Sorting=newest&Filtering=free-ebooks',
       );
 
       BookModel bookModel = BookModel.fromJson(data);
@@ -34,7 +34,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failures, List<Item>>> fetchFeaturedBooks() async {
     try {
       final data = await apiService.get(
-        endpoint: 'volumes?q=subject:computer science&Filtering=free-ebooks',
+        endpoint: 'volumes?q=subject:programming&Filtering=free-ebooks',
       );
 
       BookModel bookModel = BookModel.fromJson(data);

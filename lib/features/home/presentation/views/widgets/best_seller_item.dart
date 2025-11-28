@@ -17,7 +17,7 @@ class BestSellerItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kHomeDetailsView);
       },
       child: SizedBox(
-        height: 140,
+        height: 148,
         child: Row(
           children: [
             FeaturedBooksItem(
@@ -40,9 +40,12 @@ class BestSellerItem extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Text(
-                    book.volumeInfo!.authors![0],
-                    style: StyleOfText.textStyle14,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.53,
+                    child: Text(
+                      book.volumeInfo!.authors![0],
+                      style: StyleOfText.textStyle14,
+                    ),
                   ),
                   SizedBox(height: 8),
                   Row(
