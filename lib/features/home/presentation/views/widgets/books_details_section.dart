@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/text_styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_details_app_bar.dart';
@@ -7,8 +7,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/text_button_
 import 'package:flutter/material.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
-
+  const BooksDetailsSection({super.key, required this.book});
+  final Item book;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -19,20 +19,21 @@ class BooksDetailsSection extends StatelessWidget {
         SizedBox(height: 24),
         SizedBox(
           height: height * 0.35,
-          child: FeaturedBooksItem(imageURL: NetData.errorImage),
+          child: FeaturedBooksItem(
+              imageURL: book.volumeInfo?.imageLinks?.thumbnail),
         ),
         SizedBox(height: 42),
         SizedBox(
           width: width * 0.86,
           child: Text(
-            'The Jungle Book',
+            book.volumeInfo!.title!,
             style: StyleOfText.textStyle30,
             textAlign: TextAlign.center,
           ),
         ),
         SizedBox(height: 13),
         Text(
-          'Rudyard Kipling',
+          book.volumeInfo!.authors![0],
           style: StyleOfText.textStyle18.copyWith(
             color: Colors.white.withValues(alpha: 0.7),
             fontStyle: FontStyle.italic,

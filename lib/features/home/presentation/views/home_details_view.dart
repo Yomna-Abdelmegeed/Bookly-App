@@ -24,7 +24,7 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: HomeDetailsViewBody(),
+        child: HomeDetailsViewBody(book: widget.book),
       ),
     );
   }
