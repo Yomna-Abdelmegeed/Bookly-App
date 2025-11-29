@@ -2,7 +2,9 @@ import 'package:bookly_app/features/home/data/models/book_model/item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../views_model/featured_books_cubit/featured_books_cubit.dart';
 
 class FeaturedBooksList extends StatelessWidget {
@@ -20,10 +22,17 @@ class FeaturedBooksList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: books.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: FeaturedBooksItem(
-                      imageURL: books[index].volumeInfo?.imageLinks?.thumbnail),
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context)
+                        .push(AppRouter.kHomeDetailsView, extra: books[index]);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: FeaturedBooksItem(
+                        imageURL:
+                            books[index].volumeInfo?.imageLinks?.thumbnail),
+                  ),
                 );
               },
             ),
