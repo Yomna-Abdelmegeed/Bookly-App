@@ -5,6 +5,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/featured_boo
 import 'package:bookly_app/features/home/presentation/views/widgets/home_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/text_button_action.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksDetailsSection extends StatelessWidget {
   const BooksDetailsSection({super.key, required this.book});
@@ -48,17 +49,26 @@ class BooksDetailsSection extends StatelessWidget {
             children: [
               Expanded(
                   child: TextButtonAction(
-                content: '19.99€',
+                content: 'Free',
                 topLeftRadius: 15,
                 bottomRightRadius: 15,
+                onPressed: () {},
               )),
               Expanded(
                 child: TextButtonAction(
-                  content: 'Free preview',
+                  content: 'preview',
                   bottomLeftRadius: 15,
                   topRightRadius: 15,
                   textColor: Colors.white,
                   backgroundColor: Color(0xffEF8262),
+                  onPressed: () async {
+                    Uri uri = Uri.parse(book.volumeInfo!.previewLink!);
+                    if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri);
+                    } else {
+                      throw Exception('Could not launch $uri');
+                    }
+                  },
                 ),
               ),
             ],

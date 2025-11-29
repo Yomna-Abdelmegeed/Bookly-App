@@ -11,6 +11,7 @@ class TextButtonAction extends StatelessWidget {
     this.bottomRightRadius = 0,
     this.topRightRadius = 0,
     this.bottomLeftRadius = 0,
+    required this.onPressed,
   });
 
   final Color textColor;
@@ -20,11 +21,12 @@ class TextButtonAction extends StatelessWidget {
   final double topRightRadius;
   final double bottomLeftRadius;
   final String content;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: 30),
         backgroundColor: backgroundColor,
