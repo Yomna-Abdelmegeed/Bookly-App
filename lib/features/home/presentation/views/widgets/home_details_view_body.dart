@@ -9,11 +9,11 @@ class HomeDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverFillRemaining(
+        SliverToBoxAdapter(
           child: Column(
             children: [
               BooksDetailsSection(),
-              Expanded(child: SizedBox(height: 50)),
+              SizedBox(height: 24),
               AlsoLikeSection(),
             ],
           ),

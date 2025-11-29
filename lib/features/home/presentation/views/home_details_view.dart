@@ -16,7 +16,7 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
   @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context)
-        .getNewestBooks(cat: widget.book.volumeInfo?.categories![0] ?? "");
+        .getNewestBooks(cat: widget.book.volumeInfo!.categories?[0] ?? ' ');
     super.initState();
   }
 
