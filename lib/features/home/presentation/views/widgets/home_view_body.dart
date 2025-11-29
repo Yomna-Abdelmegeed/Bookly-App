@@ -24,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
                   FeaturedBooksList(),
                   SizedBox(height: 50),
                   Text(
-                    'Best Seller',
+                    'newest books',
                     style: StyleOfText.textStyle18.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
