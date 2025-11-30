@@ -43,12 +43,14 @@ The app uses the official **Google Books API**:
 
 📌 All books displayed are **free to browse** and can be opened using the Google Books preview link.
 
+---
 ## 🖼️ Screenshots
 
 | Splash Screen | Home Screen | Book Details | Book Launch / Preview |
 |---------------|------------|--------------|----------------------|
 | <img src="assets/images/splash.png" width="150"/> | <img src="assets/images/home.png" width="150"/> | <img src="assets/images/details.png" width="150"/> | <img src="assets/images/book_launch.png" width="150"/> |
 
+---
 
 ## 📦 Packages Used
 
